@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular-WikiSearch';
+  onTerm(term: string){
+    console.log(`Connected ${term}`)
+  }
 }

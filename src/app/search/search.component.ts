@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter,} from '@angular/core';
+import { Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-search',
@@ -6,12 +6,16 @@ import { Component, Output, EventEmitter,} from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
-  @Output() searchTerm = new EventEmitter<string>();
+  @Output() submitted = new EventEmitter<string>();
   
   term = ''
 
   onSearch(event: string){
     this.term = event
-    console.log(this.term)
+  }
+
+  onSubmit(event: any){
+    event.preventDefault();
+    this.submitted.emit(this.term);
   }
 }

@@ -1,6 +1,9 @@
-<div class="ui container">
+<form class="ui form" (submit)="onSubmit($event)">
+    <div class="field">
+      <label>Wiki Search!</label>
+    </div>
     <div class="ui input">
-        <input (input)="onSearch($any($event.target).value)" placeholder="Search...">
+        <input (input)="term = ($any($event.target).value)" placeholder="Search...">
     </div>
       {{term}}
-</div>
+</form>
